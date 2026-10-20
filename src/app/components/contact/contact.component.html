@@ -1,0 +1,48 @@
+<section id="contato">
+  <div class="inner">
+    <div class="info-col">
+      <span class="section-label">Contato</span>
+      <h2 class="section-title">Fale com a nossa equipe</h2>
+      <p class="section-desc">
+        Entre em contato e descubra como podemos ajudar o seu negócio.
+      </p>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="ci-label">Endereço</span>
+          <span class="ci-val">Av. Queiroz Filho, 1700 — Torre C, Sala 3<br>Vila Hamburguesa · Villa Lobos Office Park · SP</span>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">WhatsApp / Telefone</span>
+          <span class="ci-val"><a href="https://wa.me/5511974717831" target="_blank">+55 11 97471-7831</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">E-mail</span>
+          <span class="ci-val">contato&#64;maxs.com.br</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-col" (ngSubmit)="onSubmit()">
+
+      @if (status === 'success') {
+        <div class="feedback success">✓ Mensagem enviada! Entraremos em contato em breve.</div>
+      }
+      @if (status === 'error') {
+        <div class="feedback error">✕ Erro ao enviar. Tente novamente ou nos contate pelo WhatsApp.</div>
+      }
+
+      <div class="row-2">
+        <input type="text"  placeholder="Nome"   [(ngModel)]="form.name"    name="name"    required>
+        <input type="email" placeholder="E-mail" [(ngModel)]="form.email"   name="email"   required>
+      </div>
+      <input type="text" placeholder="Assunto" [(ngModel)]="form.subject" name="subject">
+      <textarea placeholder="Mensagem" [(ngModel)]="form.message" name="message" required></textarea>
+
+      <button type="submit" class="btn-primary" [disabled]="status === 'loading'">
+        {{ status === 'loading' ? 'Enviando...' : 'Enviar mensagem' }}
+      </button>
+
+    </form>
+  </div>
+</section>

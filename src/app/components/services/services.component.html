@@ -1,0 +1,29 @@
+<section id="servicos">
+  <div class="inner">
+    <div class="section-head">
+      <span class="section-label">Serviços</span>
+      <h2 class="section-title">O que fazemos</h2>
+      <p class="section-desc">
+        Soluções integradas de TI com foco em eficiência, segurança e crescimento do seu negócio.
+      </p>
+    </div>
+
+    <div class="grid">
+      @for (s of services; track s.title) {
+        <a class="card" [href]="'#' + s.anchor">
+          <div class="card-icon">
+            <lucide-icon [name]="s.icon"></lucide-icon>
+          </div>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.description }}</p>
+          <ul class="tag-list">
+            @for (tag of s.tags; track tag) {
+              <li>{{ tag }}</li>
+            }
+          </ul>
+          <span class="card-cta">Saiba mais →</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>

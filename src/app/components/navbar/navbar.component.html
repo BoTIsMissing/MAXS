@@ -1,0 +1,26 @@
+<header [class.scrolled]="scrolled()">
+  <div class="inner">
+    <a class="logo" href="#">
+      <img src="assets/MAXS_UPSCALE.png" alt="Maxs Tecnologia" class="logo-img" />
+    </a>
+
+    <nav class="nav-links">
+      <a (click)="scrollTo('sobre')">Sobre nós</a>
+      <a (click)="scrollTo('servicos')">Serviços</a>
+      <a (click)="scrollTo('contato')">Contato</a>
+    </nav>
+
+    <a class="btn-primary nav-cta" (click)="scrollTo('contato')">Fale com um especialista</a>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" [class.open]="menuOpen()">
+  <a (click)="scrollTo('sobre')">Sobre nós</a>
+  <a (click)="scrollTo('servicos')">Serviços</a>
+  <a (click)="scrollTo('contato')">Contato</a>
+  <a class="btn-primary" (click)="scrollTo('contato')">Fale com um especialista</a>
+</div>

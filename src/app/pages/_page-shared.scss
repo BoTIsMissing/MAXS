@@ -1,0 +1,187 @@
+/* Shared styles for all service-detail pages */
+
+.page {
+  padding-top: 80px; /* offset fixed navbar */
+}
+
+/* ── Hero ── */
+.page-hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 2rem 4rem;
+
+  .inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin: 0.5rem 0 1rem;
+  }
+
+  p {
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 600px;
+  }
+}
+
+/* ── Content blocks ── */
+.block {
+  padding: 5rem 2rem;
+  border-bottom: 1px solid var(--border);
+
+  &.alt {
+    background: var(--surface);
+  }
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+
+  p {
+    color: var(--body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  &.center {
+    text-align: center;
+
+    p { margin-left: auto; margin-right: auto; max-width: 560px; }
+  }
+}
+
+/* ── Two-column intro ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Highlight box (numbers) ── */
+.highlight-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+
+  .highlight-item {
+    background: var(--card);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    &:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .h-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+
+    em {
+      font-style: normal;
+      color: var(--accent);
+    }
+  }
+
+  .h-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* ── Feature cards grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+
+.feat-card {
+  background: var(--card);
+  padding: 1.75rem;
+  transition: background 0.2s;
+
+  &:hover { background: #202020; }
+
+  .feat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(19, 102, 217, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.83rem;
+    color: var(--body);
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+/* ── CTA section ── */
+.cta-section {
+  padding: 5rem 2rem;
+  background: var(--bg);
+
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    color: var(--body);
+    margin-bottom: 2rem;
+  }
+}
